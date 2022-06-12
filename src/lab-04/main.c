@@ -103,8 +103,8 @@ int main(int argc, char *argv[])
     /* Configura PC13 como saida pull-up off e pull-down off */
 
     reg = *pGPIOC_MODER;
-    reg &= ~(GPIO_MODER13_MASK);
-    reg |= (GPIO_MODER_OUTPUT << GPIO_MODER13_SHIFT);
+    reg &= ~(GPIO_MODER_MASK(13));
+    reg |= (GPIO_MODER_OUTPUT << GPIO_MODER_SHIFT(13));
     *pGPIOC_MODER = reg;
 
     reg = *pGPIOC_OTYPER;
@@ -113,8 +113,8 @@ int main(int argc, char *argv[])
     *pGPIOC_OTYPER = reg;
 
     reg = *pGPIOC_PUPDR;
-    reg &= ~(GPIO_PUPDR13_MASK);
-    reg |= (GPIO_PUPDR_NONE << GPIO_PUPDR13_SHIFT);
+    reg &= ~(GPIO_PUPDR_MASK(13));
+    reg |= (GPIO_PUPDR_NONE << GPIO_PUPDR_SHIFT(13));
     *pGPIOC_PUPDR = reg;
 
     while(1)
