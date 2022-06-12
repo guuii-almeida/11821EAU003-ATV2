@@ -93,10 +93,11 @@ int main(int argc, char *argv[])
     uint32_t *pGPIOA_MODER = (uint32_t *)STM32_GPIOA_MODER;
     uint32_t *pGPIOA_PUPDR = (uint32_t *)STM32_GPIOA_PUPDR;
     uint32_t *pGPIOA_IDR = (uint32_t *)STM32_GPIOA_IDR;
-    /* Habilita clock GPIOC */
+
+    /* Habilita clock GPIO* */
 
     reg = *pRCC_AHB1ENR;
-    reg |= RCC_AHB1ENR_GPIOCEN;
+    reg |= (RCC_AHB1ENR_GPIOCEN | RCC_AHB1ENR_GPIOAEN );
     *pRCC_AHB1ENR = reg;
 
     /* Configura PC13 como saida pull-up off e pull-down off */
