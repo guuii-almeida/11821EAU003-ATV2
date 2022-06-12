@@ -49,8 +49,8 @@
 #define GPIO_MODER_OUTPUT (1) /* General purpose output mode */
 #define GPIO_MODER_ALT (2) /* Alternate mode */
 #define GPIO_MODER_ANALOG (3) /* Analog mode */
-#define GPIO_MODER_SHIFT (n) ((n) << 1)
-#define GPIO_MODER_MASK (n) (3 << GPIO_MODER_SHIFT(n))
+#define GPIO_MODER_SHIFT(n) ((n) << 1)
+#define GPIO_MODER_MASK(n) (3 << GPIO_MODER_SHIFT(n))
 
 /* GPIO port output type register */
 
@@ -64,10 +64,11 @@
 #define GPIO_PUPDR_NONE (0) /* No pull-up, pull-down */
 #define GPIO_PUPDR_PULLUP (1) /* Pull-up */
 #define GPIO_PUPDR_PULLDOWN (2) /* Pull-down */
-#define GPIO_PUPDR_SHIFT (n) ((n) << 1)
-#define GPIO_PUPDR_MASK (n) (3 << GPIO_PUPDR_SHIFT(n))
+#define GPIO_PUPDR_SHIFT(n) ((n) << 1)
+#define GPIO_PUPDR_MASK(n) (3 << GPIO_PUPDR_SHIFT(n))
 
-/GPIO port input data register/
+/*GPIO port input data register*/
+
 #define GPIO_IDR(n) (1 << (n))
 
 /* GPIO port bit set/reset register */
