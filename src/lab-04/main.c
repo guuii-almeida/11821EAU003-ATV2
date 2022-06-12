@@ -49,8 +49,8 @@
 #define GPIO_MODER_OUTPUT (1) /* General purpose output mode */
 #define GPIO_MODER_ALT (2) /* Alternate mode */
 #define GPIO_MODER_ANALOG (3) /* Analog mode */
-#define GPIO_MODER13_SHIFT (26)
-#define GPIO_MODER13_MASK (3 << GPIO_MODER13_SHIFT)
+#define GPIO_MODER_SHIFT (n) ((n) << 1)
+#define GPIO_MODER_MASK (n) (3 << GPIO_MODER_SHIFT(n))
 
 /* GPIO port output type register */
 
