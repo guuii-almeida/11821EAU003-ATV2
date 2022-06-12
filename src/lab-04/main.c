@@ -117,6 +117,18 @@ int main(int argc, char *argv[])
     reg |= (GPIO_PUPDR_NONE << GPIO_PUPDR_SHIFT(13));
     *pGPIOC_PUPDR = reg;
 
+    /* Configura PA0 como entrada pull-up on e pull-down off */
+
+    reg = *pGPIOA_MODER;
+    reg &= ~(GPIO_MODER_MASK(0));
+    reg |= (GPIO_MODER_INPUT << GPIO_MODER_SHIFT(0));
+    *pGPIOA_MODER = reg;
+
+    reg = *pGPIOA_PUPDR;
+    reg &= ~(GPIO_PUPDR_MASK(0));
+    reg |= (GPIO_PUPDR_PULLUP << GPIO_PUPDR_SHIFT(0));
+    *pGPIOA_PUPDR = reg;
+
     while(1)
     {
         *pGPIOC_BSRR = GPIO_BSRR_SET(13);
