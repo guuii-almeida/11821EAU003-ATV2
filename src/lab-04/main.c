@@ -67,6 +67,9 @@
 #define GPIO_PUPDR_SHIFT (n) ((n) << 1)
 #define GPIO_PUPDR_MASK (n) (3 << GPIO_PUPDR_SHIFT(n))
 
+/GPIO port input data register/
+#define GPIO_IDR(n) (1 << (n))
+
 /* GPIO port bit set/reset register */
 
 #define GPIO_BSRR_SET(n) (1 << (n))
@@ -87,7 +90,9 @@ int main(int argc, char *argv[])
     uint32_t *pGPIOC_OTYPER = (uint32_t *)STM32_GPIOC_OTYPER;
     uint32_t *pGPIOC_PUPDR = (uint32_t *)STM32_GPIOC_PUPDR;
     uint32_t *pGPIOC_BSRR = (uint32_t *)STM32_GPIOC_BSRR;
-
+    uint32_t *pGPIOA_MODER = (uint32_t *)STM32_GPIOA_MODER;
+    uint32_t *pGPIOA_PUPDR = (uint32_t *)STM32_GPIOA_PUPDR;
+    uint32_t *pGPIOA_IDR = (uint32_t *)STM32_GPIOA_IDR;
     /* Habilita clock GPIOC */
 
     reg = *pRCC_AHB1ENR;
