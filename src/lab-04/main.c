@@ -10,7 +10,7 @@
 
 #define STM32_GPIOA_BASE 0x40020000 /* 0x40020000-0x400203FF: GPIO
                                         Port A */
-                                        
+
 #define STM32_GPIOC_BASE 0x48000800U /* 0x48000800-0x48000bff: GPIO
                                         Port C */
 
@@ -20,6 +20,7 @@
                                             register */
 #define STM32_GPIO_MODER_OFFSET 0x0000 /* GPIO port mode register */
 #define STM32_GPIO_OTYPER_OFFSET 0x0004 /* GPIO port output type register */
+#define STM32_GPIO_IDR_OFFSET 0x0010 /* GPIO port output data register */
 #define STM32_GPIO_PUPDR_OFFSET 0x000c /* GPIO port pull-up/pull-down
                                             register */
 #define STM32_GPIO_BSRR_OFFSET 0x0018 /* GPIO port bit set/reset register */
