@@ -134,12 +134,19 @@ int main(int argc, char *argv[])
 
     while(1)
     {
+        reg = *pGPIOA_IDR;
+        if ( (reg & GPIO_IDR(0)) == 0)
+        {
+            co++;
+            if (co > 1)
+            {
+                co = 0;
+            }    
+        }
         *pGPIOC_BSRR = GPIO_BSRR_SET(13);
-        led_status = 0;
-        for (uint32_t i = 0; i < LED_DELAY; i++);
+        for (uint32_t i = 0; i < led_value[co]; i++);
         *pGPIOC_BSRR = GPIO_BSRR_RST(13);
-        led_status = 1;
-        for (uint32_t i = 0; i < LED_DELAY; i++);
+        for (uint32_t i = 0; i < led_value[co]; i++);
 
     }
     /* Nao deveria chegar aqui */
