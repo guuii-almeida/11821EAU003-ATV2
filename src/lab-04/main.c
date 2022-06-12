@@ -64,8 +64,8 @@
 #define GPIO_PUPDR_NONE (0) /* No pull-up, pull-down */
 #define GPIO_PUPDR_PULLUP (1) /* Pull-up */
 #define GPIO_PUPDR_PULLDOWN (2) /* Pull-down */
-#define GPIO_PUPDR13_SHIFT (26)
-#define GPIO_PUPDR13_MASK (3 << GPIO_PUPDR13_SHIFT)
+#define GPIO_PUPDR_SHIFT (n) ((n) << 1)
+#define GPIO_PUPDR_MASK (n) (3 << GPIO_PUPDR_SHIFT(n))
 
 /* GPIO port bit set/reset register */
 
