@@ -38,6 +38,8 @@
 
 /* AHB1 Peripheral Clock enable register */
 
+#define RCC_AHB1ENR_GPIOAEN (1 << 0) /* Bit 2: IO port A clock 
+                                        enable */
 #define RCC_AHB1ENR_GPIOCEN (1 << 2) /* Bit 2: IO port C clock
                                         enable */
 
