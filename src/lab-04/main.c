@@ -8,6 +8,9 @@
 
 /* AHB2 Base Addresses ******************************************************/
 
+#define STM32_GPIOA_BASE 0x40020000 /* 0x40020000-0x400203FF: GPIO
+                                        Port A */
+                                        
 #define STM32_GPIOC_BASE 0x48000800U /* 0x48000800-0x48000bff: GPIO
                                         Port C */
 
