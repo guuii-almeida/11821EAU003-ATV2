@@ -129,6 +129,9 @@ int main(int argc, char *argv[])
     reg |= (GPIO_PUPDR_PULLUP << GPIO_PUPDR_SHIFT(0));
     *pGPIOA_PUPDR = reg;
 
+    static const uint32_t led_value[] = {250,1000};
+    uint8_t co;
+
     while(1)
     {
         *pGPIOC_BSRR = GPIO_BSRR_SET(13);
